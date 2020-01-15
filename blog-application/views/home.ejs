@@ -1,0 +1,17 @@
+<%- include('partials/header')%>
+<h1>Hello hiiiiii</h1>
+<p>
+  <%= content %>
+</p>
+<% blogss.forEach(function(item){%>
+  <h1> <%=item.postTitle%> </h1>
+    <p>
+      <% if(item.postBody.length > 50 ) {%>
+      <%=item.postBody.substr(0,50)+"...."%>
+      <% } else {%>
+      <%=item.postBody%>
+      <%}%>
+      <a href="posts/<%=item.postTitle%>" >more</a>
+      </p>
+<%})%>
+<%- include('partials/footer')%>
